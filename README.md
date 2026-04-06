@@ -47,7 +47,7 @@ git init
 git add .
 git commit -m "first upload"
 git branch -M main
-git remote add origin https://github.com/Rajaammaiappan/short-option-pro.git
+git remote add origin https://github.com/YOUR_GITHUB_USERNAME/short-option-pro.git
 git push -u origin main
 ```
 Replace YOUR_GITHUB_USERNAME with your actual GitHub username.
