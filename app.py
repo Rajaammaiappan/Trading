@@ -278,7 +278,9 @@ def performance():
     total_pnl = sum(t["exit_pnl"] for t in trades)
     monthly = {}
     for t in trades:
-        m = t["date"][:7]
+        # Use exit_date if available, fall back to trade date
+        raw = t.get("exit_date") or t.get("date") or ""
+        m = raw[:7] if raw else "unknown"
         if m not in monthly:
             monthly[m] = {"month": m, "pnl": 0, "count": 0}
         monthly[m]["pnl"] += t["exit_pnl"]
